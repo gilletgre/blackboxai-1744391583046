@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Events | Solution de connectivité pour événements majeurs</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0066FF',
+                        secondary: '#00CC99',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                        <i class="fas fa-wifi mr-2"></i>
+                        WiFi Events
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-900 hover:text-primary transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">About</a>
+                    <a href="services.html" class="text-gray-600 hover:text-primary transition-colors">Services</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Get Started</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-900 hover:text-primary transition-colors">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-600 hover:text-primary transition-colors">About</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-600 hover:text-primary transition-colors">Services</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-600 hover:text-primary transition-colors">Contact</a>
+                <a href="#" class="block px-3 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-teal-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute -right-10 top-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+                <div class="absolute -left-10 bottom-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="relative grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-left">
+                    <div class="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 mb-6">
+                        <span class="flex h-2 w-2 rounded-full bg-primary"></span>
+                    <span class="text-sm font-medium text-gray-600">Solution WiFi pour événements</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                        Connectivité Outdoor<br>pour Événements Majeurs
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-xl">
+                        Une architecture WiFi robuste et scalable pour Brussels Major Event. Solution complète pour les Plaisirs d'Hiver et autres événements majeurs.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#simulator" class="group bg-primary text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-all duration-200 flex items-center space-x-2">
+                            <span>Simuler mon projet</span>
+                            <i class="fas fa-calculator transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#architecture" class="group bg-white text-gray-900 px-8 py-3 rounded-lg hover:bg-gray-50 transition-all duration-200 border border-gray-200 flex items-center space-x-2">
+                            <span>Découvrir l'architecture</span>
+                            <i class="fas fa-network-wired transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <!-- Network Architecture Preview -->
+                    <div class="bg-white rounded-xl shadow-2xl p-6 transform hover:-translate-y-1 transition-all duration-200">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <div class="text-sm text-gray-500">Réseau actif</div>
+                            </div>
+                            <div class="text-sm text-gray-500">Monitoring en temps réel</div>
+                        </div>
+                        <div class="space-y-6">
+                            <!-- Network Map Preview -->
+                            <div class="relative h-48 bg-gray-100 rounded-lg overflow-hidden">
+                                <div class="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/light-v10/static/4.351,50.8503,13,0/600x300?access_token=YOUR_TOKEN')] bg-cover bg-center opacity-50"></div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <i class="fas fa-map-marker-alt text-primary text-4xl mb-2"></i>
+                                        <p class="text-sm font-medium">6 sites connectés</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Network Stats -->
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-primary">21</div>
+                                    <div class="text-sm text-gray-600">Points d'accès</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-primary">250+</div>
+                                    <div class="text-sm text-gray-600">Utilisateurs</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-primary">99.9%</div>
+                                    <div class="text-sm text-gray-600">Uptime</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Floating Elements -->
+                    <div class="absolute -right-4 top-1/4 bg-white rounded-lg shadow-lg p-4 transform rotate-6 hover:rotate-0 transition-transform">
+                        <i class="fas fa-wifi text-primary text-xl"></i>
+                    </div>
+                    <div class="absolute left-4 bottom-1/4 bg-white rounded-lg shadow-lg p-4 transform -rotate-6 hover:rotate-0 transition-transform">
+                        <i class="fas fa-network-wired text-secondary text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Components Section -->
+    <section class="py-20" id="architecture">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-semibold">Architecture</span>
+                <h2 class="text-4xl font-bold text-gray-900 mt-2 mb-4">Solution WiFi complète pour événements</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Une infrastructure réseau robuste et sécurisée, conçue pour les grands événements en extérieur.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Component 1: Coverage -->
+                <div class="group p-8 bg-white rounded-xl border border-gray-100 hover:border-primary/20 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-wifi text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Couverture étendue</h3>
+                        <p class="text-gray-600 mb-4">Points d'accès haute densité WiFi BaseStation XG pour une couverture optimale des zones très fréquentées.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-gray-500">6 sites couverts</span>
+                            <a href="#coverage" class="inline-flex items-center text-primary font-medium hover:text-blue-600 transition-colors">
+                                <span>Détails</span>
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Component 2: Backbone -->
+                <div class="group p-8 bg-white rounded-xl border border-gray-100 hover:border-primary/20 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-network-wired text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Infrastructure backbone</h3>
+                        <p class="text-gray-600 mb-4">Liaisons point-à-point Building Bridge XG pour une connectivité fiable entre les sites distants.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-gray-500">Jusqu'à 10 Gbps</span>
+                            <a href="#backbone" class="inline-flex items-center text-primary font-medium hover:text-blue-600 transition-colors">
+                                <span>Détails</span>
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Component 3: Management -->
+                <div class="group p-8 bg-white rounded-xl border border-gray-100 hover:border-primary/20 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-server text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Gestion centralisée</h3>
+                        <p class="text-gray-600 mb-4">Console UDM Pro SE pour une administration unifiée, monitoring en temps réel et sécurité avancée.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-gray-500">24/7 monitoring</span>
+                            <a href="#management" class="inline-flex items-center text-primary font-medium hover:text-blue-600 transition-colors">
+                                <span>Détails</span>
+                                <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Map Section -->
+    <section class="py-20 bg-gray-50" id="coverage">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-semibold">Couverture</span>
+                <h2 class="text-4xl font-bold text-gray-900 mt-2 mb-4">Sites couverts pour les Plaisirs d'Hiver</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Découvrez notre infrastructure déployée sur les principaux sites de l'événement.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Interactive Map -->
+                <div class="bg-white p-8 rounded-xl border border-gray-100 hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-[400px] rounded-xl overflow-hidden bg-gray-100">
+                        <div class="absolute inset-0 bg-[url('https://api.mapbox.com/styles/v1/mapbox/light-v10/static/4.351,50.8503,13,0/800x400?access_token=YOUR_TOKEN')] bg-cover bg-center"></div>
+                        <!-- Map markers would be added here with JavaScript -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <p class="text-gray-500">Carte interactive en cours de chargement...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Site Details -->
+                <div class="space-y-6">
+                    <!-- Site 1 -->
+                    <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-gray-900">Place Sainte-Catherine</h3>
+                            <span class="px-3 py-1 text-sm text-primary bg-blue-50 rounded-full">Principal</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p class="text-gray-500">Points d'accès</p>
+                                <p class="font-medium">4x WiFi BaseStation XG</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Couverture</p>
+                                <p class="font-medium">~150 chalets</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Connexion</p>
+                                <p class="font-medium">Bridge XG + Fibre</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Capacité</p>
+                                <p class="font-medium">10 Gbps</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Site 2 -->
+                    <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-gray-900">Place De Brouckère</h3>
+                            <span class="px-3 py-1 text-sm text-secondary bg-green-50 rounded-full">Secondaire</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <p class="text-gray-500">Points d'accès</p>
+                                <p class="font-medium">3x U6 Mesh Pro</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Couverture</p>
+                                <p class="font-medium">~50 chalets</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Connexion</p>
+                                <p class="font-medium">Bridge XG</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Capacité</p>
+                                <p class="font-medium">5 Gbps</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More sites button -->
+                    <div class="text-center pt-4">
+                        <button class="inline-flex items-center justify-center space-x-2 bg-white text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-50 transition-all duration-200 border border-gray-200">
+                            <span>Voir tous les sites</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost Simulator -->
+    <section class="py-20" id="simulator">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-semibold">Simulation</span>
+                <h2 class="text-4xl font-bold text-gray-900 mt-2 mb-4">Simulateur de coûts</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Estimez rapidement le coût de votre infrastructure WiFi événementielle.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Simulator Form -->
+                <div class="bg-white p-8 rounded-xl border border-gray-100 space-y-6">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Nombre de sites à couvrir</label>
+                            <div class="flex items-center space-x-4">
+                                <input type="range" min="1" max="10" value="3" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                                <span class="text-gray-900 font-medium">3</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Points d'accès par site</label>
+                            <div class="flex items-center space-x-4">
+                                <input type="range" min="1" max="8" value="4" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                                <span class="text-gray-900 font-medium">4</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Type d'équipement</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <button class="p-4 border-2 border-primary bg-blue-50 rounded-lg text-center">
+                                    <i class="fas fa-wifi text-primary text-xl mb-2"></i>
+                                    <p class="text-sm font-medium text-gray-900">WiFi BaseStation XG</p>
+                                    <p class="text-xs text-gray-500">Haute densité</p>
+                                </button>
+                                <button class="p-4 border-2 border-gray-200 rounded-lg text-center">
+                                    <i class="fas fa-router text-gray-400 text-xl mb-2"></i>
+                                    <p class="text-sm font-medium text-gray-900">U6 Mesh Pro</p>
+                                    <p class="text-xs text-gray-500">Standard</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="block text-sm font-medium text-gray-700">Options additionnelles</label>
+                            <div class="flex items-center">
+                                <input type="checkbox" class="h-4 w-4 text-primary border-gray-300 rounded">
+                                <label class="ml-2 text-sm text-gray-700">Support premium 24/7</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" class="h-4 w-4 text-primary border-gray-300 rounded">
+                                <label class="ml-2 text-sm text-gray-700">Portail captif personnalisé</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" class="h-4 w-4 text-primary border-gray-300 rounded">
+                                <label class="ml-2 text-sm text-gray-700">Installation et démontage</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cost Summary -->
+                <div class="bg-white p-8 rounded-xl border border-gray-100">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Estimation des coûts</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between pb-4 border-b border-gray-100">
+                            <div>
+                                <p class="font-medium text-gray-900">Équipements</p>
+                                <div class="space-y-1">
+                                    <p class="text-sm text-gray-500" id="equipmentDetails">20x U6 Mesh Pro</p>
+                                    <p class="text-xs text-gray-400" id="equipmentSpecs">Couverture standard, jusqu'à 500 clients</p>
+                                </div>
+                            </div>
+                            <p class="font-medium text-gray-900" id="equipmentCost">17.988 €</p>
+                        </div>
+                        <div class="flex justify-between pb-4 border-b border-gray-100">
+                            <div>
+                                <p class="font-medium text-gray-900">Infrastructure</p>
+                                <div class="space-y-1">
+                                    <p class="text-sm text-gray-500" id="infraDetails">3x Building Bridge XG, switches, mâts</p>
+                                    <p class="text-xs text-gray-400" id="infraSpecs">Liaisons 10 Gbps, installation sur mâts 6m</p>
+                                </div>
+                            </div>
+                            <p class="font-medium text-gray-900" id="infraCost">8.465 €</p>
+                        </div>
+                        <div class="flex justify-between pb-4 border-b border-gray-100">
+                            <div>
+                                <p class="font-medium text-gray-900">Services</p>
+                                <div class="space-y-1">
+                                    <p class="text-sm text-gray-500" id="servicesDetails">Installation, support premium 24/7</p>
+                                    <p class="text-xs text-gray-400" id="servicesSpecs">Monitoring temps réel, intervention < 4h</p>
+                                    <p class="text-xs text-primary mt-2" id="installationCost"></p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-medium text-gray-900" id="servicesCost">10.000 €</p>
+                                <p class="text-xs text-gray-500 mt-1">TVA non incluse</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between pt-4">
+                            <p class="text-xl font-semibold text-gray-900">Total HTVA</p>
+                            <p class="text-xl font-semibold text-primary" id="totalCost">36.453 €</p>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <button class="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center space-x-2">
+                            <span>Demander un devis détaillé</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <p class="text-sm text-gray-500 text-center mt-4">Prix indicatifs hors TVA, sous réserve d'une étude de site</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-primary font-semibold">Témoignages</span>
+                <h2 class="text-4xl font-bold text-gray-900 mt-2 mb-4">Ils nous font confiance</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Découvrez les retours d'expérience de nos clients sur nos solutions WiFi événementielles.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="group p-8 bg-white rounded-xl border border-gray-100 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="relative">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" 
+                                 alt="User" 
+                                 class="w-14 h-14 rounded-full mr-4 ring-4 ring-blue-50">
+                            <div class="absolute -bottom-1 -right-1 bg-primary text-white rounded-full p-1">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Marc Durand</h4>
+                            <div class="flex items-center">
+                                <p class="text-gray-600 text-sm">Directeur Technique</p>
+                                <span class="mx-2 text-gray-300">•</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Brussels_Winter_Wonders_logo.svg" alt="Plaisirs d'Hiver" class="h-4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-quote-left text-4xl text-gray-100 absolute -top-2 -left-2"></i>
+                        <p class="text-gray-600 relative z-10 pl-6">"La solution WiFi déployée a parfaitement répondu à nos besoins. La couverture était excellente et le support technique très réactif."</p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <div class="flex items-center text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="ml-2 text-gray-600">5.0 rating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="group p-8 bg-white rounded-xl border border-gray-100 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="relative">
+                            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" 
+                                 alt="User" 
+                                 class="w-14 h-14 rounded-full mr-4 ring-4 ring-blue-50">
+                            <div class="absolute -bottom-1 -right-1 bg-primary text-white rounded-full p-1">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Sophie Lambert</h4>
+                            <div class="flex items-center">
+                                <p class="text-gray-600 text-sm">Responsable Événementiel</p>
+                                <span class="mx-2 text-gray-300">•</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Visit_Brussels_logo.svg" alt="Visit Brussels" class="h-4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-quote-left text-4xl text-gray-100 absolute -top-2 -left-2"></i>
+                        <p class="text-gray-600 relative z-10 pl-6">"L'infrastructure réseau a permis une gestion fluide des paiements et de la billetterie. Un vrai plus pour nos exposants."</p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <div class="flex items-center text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="ml-2 text-gray-600">5.0 rating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="group p-8 bg-white rounded-xl border border-gray-100 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="relative">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" 
+                                 alt="User" 
+                                 class="w-14 h-14 rounded-full mr-4 ring-4 ring-blue-50">
+                            <div class="absolute -bottom-1 -right-1 bg-primary text-white rounded-full p-1">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Pierre Dubois</h4>
+                            <div class="flex items-center">
+                                <p class="text-gray-600 text-sm">Gérant</p>
+                                <span class="mx-2 text-gray-300">•</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Brussels_Expo_logo.svg" alt="Brussels Expo" class="h-4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-quote-left text-4xl text-gray-100 absolute -top-2 -left-2"></i>
+                        <p class="text-gray-600 relative z-10 pl-6">"Le portail captif personnalisé a permis de collecter des données précieuses sur nos visiteurs tout en respectant le RGPD."</p>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <div class="flex items-center text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="ml-2 text-gray-600">5.0 rating</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Top Section -->
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <a href="index.html" class="text-3xl font-bold text-white flex items-center mb-6">
+                        <i class="fas fa-wifi text-primary mr-2"></i>
+                        WiFi Events
+                    </a>
+                    <p class="text-gray-400 text-lg mb-8 max-w-md">Solutions de connectivité professionnelle pour vos événements. Un partenariat Proximus | Cartronics.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-lg transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-lg transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-lg transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-lg transition-colors">
+                            <i class="fab fa-discord text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-6">Contact technique</h4>
+                    <p class="text-gray-400 mb-6">Une question sur notre solution ? Notre équipe d'experts est à votre disposition.</p>
+                    <form class="flex space-x-2">
+                        <input type="email" 
+                               placeholder="Enter your email" 
+                               class="flex-1 px-4 py-3 bg-gray-800 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary border border-gray-700">
+                        <button type="submit" 
+                                class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors flex items-center">
+                            Subscribe
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Middle Section -->
+            <div class="grid md:grid-cols-4 gap-8 py-12 border-t border-gray-800">
+                <div>
+                    <h4 class="font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">WiFi événementiel</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Portail captif</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Monitoring</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Support 24/7</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Partenaires</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Proximus</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cartronics</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Ubiquiti</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Brussels Major Events</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">License</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">&copy; 2024 WiFi Events - Un partenariat Proximus | Cartronics. Tous droits réservés.</p>
+                <div class="flex items-center space-x-8">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Proximus_2014.svg" alt="Proximus" class="h-8">
+                    <img src="https://cartronics.be/logo.svg" alt="Cartronics" class="h-8">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Ubiquiti_Networks_2016.svg" alt="Ubiquiti" class="h-8">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
