@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | WiFi Events - Solution de connectivité pour événements majeurs</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0066FF',
+                        secondary: '#00CC99',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                        <i class="fas fa-wifi mr-2"></i>
+                        WiFi Events
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition-colors">Accueil</a>
+                    <a href="about.html" class="text-gray-600 hover:text-primary transition-colors">À propos</a>
+                    <a href="services.html" class="text-gray-600 hover:text-primary transition-colors">Services</a>
+                    <a href="contact.html" class="text-gray-900 hover:text-primary transition-colors">Contact</a>
+                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Commencer</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-600 hover:text-primary transition-colors">Accueil</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-600 hover:text-primary transition-colors">À propos</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-600 hover:text-primary transition-colors">Services</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-900 hover:text-primary transition-colors">Contact</a>
+                <a href="#" class="block px-3 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors">Commencer</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-teal-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl font-bold text-gray-900 mb-6">
+                    Contactez-nous
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Des questions sur notre solution WiFi événementielle ? Notre équipe est à votre disposition pour vous répondre dans les plus brefs délais.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-xl border border-gray-100">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Envoyez-nous un message</h2>
+                    <form id="contactForm" class="space-y-6">
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                                placeholder="Votre nom">
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                                placeholder="votre@email.com">
+                        </div>
+
+                        <!-- Subject -->
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Sujet</label>
+                            <input type="text" id="subject" name="subject" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                                placeholder="Comment pouvons-nous vous aider ?">
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                                placeholder="Votre message..."></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit"
+                            class="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Map and Contact Information -->
+                <div class="space-y-8">
+                    <!-- Interactive Map -->
+                    <div class="bg-white p-8 rounded-xl border border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Nos sites</h3>
+                        <div class="relative h-[400px] rounded-xl overflow-hidden">
+                            <iframe 
+                                width="100%" 
+                                height="100%" 
+                                frameborder="0" 
+                                scrolling="no" 
+                                marginheight="0" 
+                                marginwidth="0" 
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=4.3400,50.8400,4.3600,50.8600&amp;layer=mapnik&amp;markers=50.8503,4.3517;50.8527,4.3549"
+                                class="rounded-xl"
+                            ></iframe>
+                        </div>
+                        <div class="mt-4 space-y-4">
+                            <div class="p-3 bg-blue-50 rounded-lg">
+                                <p class="text-sm font-medium text-gray-900">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                                    Place Sainte-Catherine (Site Principal)
+                                </p>
+                                <div class="mt-2 text-sm text-gray-600 pl-6">
+                                    <p><i class="fas fa-wifi text-primary mr-2"></i>4x WiFi BaseStation XG</p>
+                                    <p><i class="fas fa-users text-primary mr-2"></i>~150 chalets couverts</p>
+                                    <p><i class="fas fa-network-wired text-primary mr-2"></i>Connexion fibre 10 Gbps</p>
+                                </div>
+                            </div>
+                            <div class="p-3 bg-green-50 rounded-lg">
+                                <p class="text-sm font-medium text-gray-900">
+                                    <i class="fas fa-map-marker-alt text-secondary mr-2"></i>
+                                    Place De Brouckère (Site Secondaire)
+                                </p>
+                                <div class="mt-2 text-sm text-gray-600 pl-6">
+                                    <p><i class="fas fa-wifi text-secondary mr-2"></i>3x U6 Mesh Pro</p>
+                                    <p><i class="fas fa-users text-secondary mr-2"></i>~50 chalets couverts</p>
+                                    <p><i class="fas fa-network-wired text-secondary mr-2"></i>Connexion Bridge XG 5 Gbps</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contact Information Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Office Location -->
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4 shadow-sm">
+                                    <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Siège social</h3>
+                                    <p class="text-gray-700">
+                                        Rue de la Station 142<br>
+                                        7700 Mouscron<br>
+                                        Belgique
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Business Hours -->
+                        <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl border border-green-200">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4 shadow-sm">
+                                    <i class="fas fa-clock text-secondary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Heures d'ouverture</h3>
+                                    <p class="text-gray-700">
+                                        Lundi - Vendredi:<br>
+                                        8h30 - 12h00, 13h30 - 17h30<br>
+                                        Samedi - Dimanche: Fermé
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="bg-white p-8 rounded-xl border border-gray-100 mt-4">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-primary text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">Informations de contact</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-500 mb-1">Email</p>
+                                        <p class="text-gray-700">info@cartronics.be</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-500 mb-1">Téléphone</p>
+                                        <p class="text-gray-700">+32 56 34 47 87</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-500 mb-1">Fax</p>
+                                        <p class="text-gray-700">+32 56 34 47 88</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-500 mb-1">TVA</p>
+                                        <p class="text-gray-700">BE 0875.797.459</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-500 mb-1">RPM</p>
+                                        <p class="text-gray-700">Tournai</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-xl border border-gray-200 mt-4">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-4 shadow-sm">
+                                <i class="fas fa-share-alt text-primary text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">Suivez-nous</h3>
+                                <div class="flex space-x-4">
+                                    <a href="https://www.facebook.com/cartronics.be" target="_blank" 
+                                       class="flex items-center px-4 py-2 bg-white rounded-lg border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-colors">
+                                        <i class="fab fa-facebook text-xl mr-2"></i>
+                                        <span class="font-medium">Facebook</span>
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/cartronics-sprl" target="_blank"
+                                       class="flex items-center px-4 py-2 bg-white rounded-lg border border-gray-200 hover:border-blue-600 hover:text-blue-600 transition-colors">
+                                        <i class="fab fa-linkedin text-xl mr-2"></i>
+                                        <span class="font-medium">LinkedIn</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">WiFi Events</h3>
+                    <p class="text-gray-400">Solutions de connectivité professionnelle pour vos événements. Un partenariat Proximus | Cartronics.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Réseaux sociaux</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/cartronics.be" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/cartronics-sprl" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-semibold mb-4">Newsletter</h4>
+                    <form class="space-y-2">
+                        <input type="email" placeholder="Votre adresse email" class="w-full px-3 py-2 bg-gray-800 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <button type="submit" class="w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                            S'abonner
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 WiFi Events - Un partenariat Proximus | Cartronics. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
