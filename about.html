@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | UI Design System</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0066FF',
+                        secondary: '#00CC99',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-primary">UI.design</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="/about.html" class="text-gray-900 hover:text-primary transition-colors">About</a>
+                    <a href="/services.html" class="text-gray-600 hover:text-primary transition-colors">Services</a>
+                    <a href="/contact.html" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                    <a href="#" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Get Started</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/" class="block px-3 py-2 text-gray-600 hover:text-primary transition-colors">Home</a>
+                <a href="/about.html" class="block px-3 py-2 text-gray-900 hover:text-primary transition-colors">About</a>
+                <a href="/services.html" class="block px-3 py-2 text-gray-600 hover:text-primary transition-colors">Services</a>
+                <a href="/contact.html" class="block px-3 py-2 text-gray-600 hover:text-primary transition-colors">Contact</a>
+                <a href="#" class="block px-3 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-teal-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl font-bold text-gray-900 mb-6">
+                    About UI.design
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    We're on a mission to make beautiful UI design accessible to everyone.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
+                    <p class="text-gray-600 mb-6">
+                        Founded in 2024, UI.design started with a simple idea: make professional UI design accessible to everyone. We believed that beautiful, functional interfaces shouldn't be limited to big companies with large design teams.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Today, we're proud to serve thousands of developers and designers worldwide, helping them create stunning user interfaces with our comprehensive design system.
+                    </p>
+                    <div class="grid grid-cols-3 gap-6 mt-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">10K+</div>
+                            <div class="text-gray-600">Components</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">50K+</div>
+                            <div class="text-gray-600">Developers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">100+</div>
+                            <div class="text-gray-600">Countries</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg" alt="Team collaboration" class="rounded-xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Values</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">The principles that guide everything we do.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-heart text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">User-Focused</h3>
+                    <p class="text-gray-600">Everything we create is designed with the end user in mind, ensuring intuitive and delightful experiences.</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-bolt text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Innovation</h3>
+                    <p class="text-gray-600">We constantly push the boundaries of what's possible in UI design, staying ahead of trends.</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-100">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Community</h3>
+                    <p class="text-gray-600">We believe in the power of community and sharing knowledge to elevate the entire industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">The talented people behind our success.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="text-center">
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" alt="Team member" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-1">Alex Thompson</h3>
+                    <p class="text-gray-600">Founder & CEO</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="text-center">
+                    <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="Team member" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-1">Sarah Chen</h3>
+                    <p class="text-gray-600">Lead Designer</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="text-center">
+                    <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="Team member" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-1">Mike Roberts</h3>
+                    <p class="text-gray-600">Tech Lead</p>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="text-center">
+                    <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="Team member" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-1">Emma Wilson</h3>
+                    <p class="text-gray-600">Product Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">UI.design</h3>
+                    <p class="text-gray-400">Building better user interfaces for the modern web.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="/services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-semibold mb-4">Newsletter</h4>
+                    <form class="space-y-2">
+                        <input type="email" placeholder="Enter your email" class="w-full px-3 py-2 bg-gray-800 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <button type="submit" class="w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 UI.design. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
